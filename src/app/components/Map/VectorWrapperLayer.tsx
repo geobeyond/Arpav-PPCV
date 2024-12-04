@@ -24,7 +24,8 @@ export const VectorWrapperLayer = (props: any) => {
 
   let selected = false;
 
-  const url = `https://arpav.geobeyond.dev/vector-tiles/municipalities/{z}/{x}/{y}`;
+  // const url = `https://arpav.geobeyond.dev/vector-tiles/municipalities/{z}/{x}/{y}`;
+  const url = process.env.REACT_APP_BACKEND_PUBLIC_URL + '/vector-tiles/municipalities/{z}/{x}/{y}';
 
   useEffect(() => {
     context.map.createPane('municipalities');

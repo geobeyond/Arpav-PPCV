@@ -14,6 +14,8 @@ RUN yarn build
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
 ENV NODE_ENV production
+ARG REACT_APP_BACKEND_PUBLIC_URL
+ENV REACT_APP_BACKEND_PUBLIC_URL $REACT_APP_BACKEND_PUBLIC_URL
 # Copy built assets from builder
 COPY --from=builder /app/build /usr/share/nginx/html
 # Add your nginx.conf

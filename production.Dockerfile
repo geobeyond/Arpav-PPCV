@@ -14,6 +14,7 @@ RUN yarn build
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
 ENV NODE_ENV production
+ENV REACT_APP_BACKEND_PUBLIC_URL https://clima.arpa.veneto.it
 # Copy built assets from builder
 COPY --from=builder /app/build /usr/share/nginx/html
 # Add your nginx.conf
