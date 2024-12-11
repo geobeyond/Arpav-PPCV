@@ -23,7 +23,8 @@ export const StationsLayer = (props: any) => {
     let selected = false;
     // let hovered = false;
     const container = context.layerContainer || context.map;
-    const url = 'https://arpav.geobeyond.dev/vector-tiles/stations/{z}/{x}/{y}';
+    // const url = 'https://arpav.geobeyond.dev/vector-tiles/stations/{z}/{x}/{y}';
+    const url = process.env.REACT_APP_BACKEND_PUBLIC_URL + '/vector-tiles/stations/{z}/{x}/{y}';
 
     context.map.createPane('stations');
     // @ts-ignore
